@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './style.css';
 
-import Cadastro from '../cadastro/Cadastro';
+import Pedido from '../cadastro/Pedido';
 
 // import { Container } from './styles';
 
@@ -10,7 +10,7 @@ export default class Main extends Component {
     return (
       <div className="container main">
         <div className="col-12">
-          <Cadastro></Cadastro>
+          <Pedido></Pedido>
         </div>
       </div>
     );
