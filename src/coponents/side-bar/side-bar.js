@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-// import { Container } from './styles';
+import './style.css';
 
 export default class SideBar extends Component {
   render() {
     return (
-        <div>
-            test Side-Bar
+        <div className="side-nav bg-light text-white col-2">
+            
         </div>
     );
   }
