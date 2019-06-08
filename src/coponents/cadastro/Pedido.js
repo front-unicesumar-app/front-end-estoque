@@ -3,7 +3,7 @@ import "./style.css";
 
 // import { Container } from './styles';
 
-export default function Cadastro() {
+export default function Pedido() {
   return (
     <div className="row">
       <div class="form-group col-8">
