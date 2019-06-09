@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './style.css';
+import {Switch, Route} from 'react-router-dom'
 
 import Pedido from '../cadastro/Pedido';
 
@@ -10,7 +11,9 @@ export default class Main extends Component {
     return (
       <div className="container main">
         <div className="col-12">
-          <Pedido></Pedido>
+          <Switch>
+          <Route path='/pedido' component={Pedido}/>
+          </Switch>
         </div>
       </div>
     );
