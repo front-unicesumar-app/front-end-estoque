@@ -9,9 +9,9 @@ export default class SideBar extends Component {
         <div className="side-nav bg-light col-2">
           <div className="container">
           <ul>
-              <li><NavLink><p>Lista de pedidos</p></NavLink></li>
+              <li><NavLink to='/'><p>Lista de pedidos</p></NavLink></li>
               <li><NavLink to='/pedido'><p>Criar pedidos</p></NavLink></li>
-              <li><NavLink><p>Cadastrar Produto</p></NavLink></li>
+              <li><NavLink to='/cadastrar-produtos'><p>Cadastrar Produto</p></NavLink></li>
             </ul>
           </div>
         </div>
