@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import './style.css';
 import {Switch, Route} from 'react-router-dom'
 
-import Pedido from '../cadastro/Pedido';
-import ListaDePedidos from '../lista-de-pedidos/ListaDePedidos';
-import CadastrarProdutos from '../cadastrar-produtos/CadastrarProdutos'
+import Pedido from '../pedidos/cadastro/Pedido';
+import ListaDePedidos from '../pedidos/lista-de-pedidos/ListaDePedidos';
+import CadastrarProdutos from '../produtos/cadastrar-produtos/CadastrarProdutos'
 
 // import { Container } from './styles';
 
