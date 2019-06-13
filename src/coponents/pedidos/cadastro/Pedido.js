@@ -3,29 +3,34 @@ import "./style.css";
 
 // import { Container } from './styles';
 
-export default function Pedido() {
 
-  let addProducts = function () {
-    products.push({id: 2, name: 'C'});
-  
-    addProducts.bind(this);
-  
-    console.log(products);
-  }
-  
-  let products = [
+
+
+export default class Pedido {
+
+  products = [
     {id: 0, name: 'A'},
     {id: 1, name: 'B'},
   ];
 
-  const listProducts = products.map((product) => (
-      <div className="prdList row" key={product.id}>{product.name}</div>
+  addProducts() {
+    this.products.push({id: 2, name: 'C'});
+  
+    this.addProducts.bind(this);
+  
+    console.log(this.products);
+  }
+  
+ 
+  listProducts = this.products.map((product) => (
+      <div className="prdList row" key={this.product.id}>{this.product.name}</div>
   ));
 
+  render(){
   return (
     <div className="row">
       <div className="row">
-        {listProducts}
+        {this.listProducts}
       </div>
       <div className="form-group col-8">
         <label>Nome do Professor</label>
@@ -41,7 +46,7 @@ export default function Pedido() {
             <p>Adicionar ou Excluir Campos</p>
           </div>
           <div className="col-2">
-            <button type="button" onClick={addProducts} className="btn btn-primary btn-sm add">
+            <button type="button" onClick={this.addProducts} className="btn btn-primary btn-sm add">
               +
             </button>
             <button type="button" className="btn btn-secondary btn-sm">
@@ -73,5 +78,5 @@ export default function Pedido() {
         <input type="text" className="form-control" placeholder="Total" />
       </div>
     </div>
-  );
+  );}
 }

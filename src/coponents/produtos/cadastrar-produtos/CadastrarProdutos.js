@@ -2,9 +2,10 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-export default function CadastrarProdutos() {
-  var b = 'b';
+export default class CadastrarProdutos {
+  render(){
   return (
     <div>test Cadastrar Produtos</div>
   );
+}
 }
