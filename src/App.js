@@ -5,14 +5,18 @@ import SideBar from './coponents/side-bar/side-bar'
 import NavBar from './coponents/nav-bar/nav-bar'
 
 
-function App() {
+export default class App {
+  render(){
   return (
     <div className="App">
       <NavBar></NavBar>
-      <SideBar></SideBar>
-      <Main></Main>
+      <div className="row">
+          <SideBar></SideBar>
+          <Main></Main>
+      </div>
     </div>
   );
 }
+}
 
-export default App;
+
