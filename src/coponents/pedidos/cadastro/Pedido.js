@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import Table from 'react-bootstrap/Table'
 
 // import { Container } from './styles';
 
@@ -8,23 +9,34 @@ import "./style.css";
 
 export default class Pedido extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.addProducts = this.addProducts.bind(this);
+
+    this.renderList = this.renderList.bind(this);
+  }
+
   products = [
-    {id: 0, name: 'A'},
-    {id: 1, name: 'B'},
+    {id: 0, name: 'Cebola', qtd: 5, un: 'kg', total: 10},
+    {id: 1,  name: 'Maçã', qtd: 2, un: 'Und.', total: 4},
   ];
 
-  addProducts() {
-    this.products.push({id: 2, name: 'C'});
-  
-    this.addProducts.bind(this);
-  
+  renderList() {
     console.log(this.products);
+    return this.products.map(list => (
+      <tr key={list.id}>
+        <th>{list.name}</th>
+        <th>{list.qtd}</th>
+        <th>{list.un}</th>
+        <th>{list.total}</th>
+      </tr>
+    ))
   }
-  
- 
-  // listProducts = this.products.map((product) => (
-      // <div className="prdList row" key={this.product.id}>{this.product.name}</div>
-  // ));
+
+  addProducts() {
+    this.products.push({id: 2,  name: 'Suco', qtd: 2, un: 'litros', total: 4})
+    this.renderList();
+  }
 
   render(){
   return (
@@ -43,40 +55,53 @@ export default class Pedido extends React.Component {
       <div className="col-12">
         <div className="row">
           <div className="col-10">
-            <p>Adicionar ou Excluir Campos</p>
-          </div>
-          <div className="col-2">
-            <button type="button" onClick={this.addProducts} className="btn btn-primary btn-sm add">
-              +
-            </button>
-            <button type="button" className="btn btn-secondary btn-sm">
-              -
-            </button>
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>Produto</th>
+                  <th>Quantidade</th>
+                  <th>Un</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.renderList()}
+              </tbody>
+            </Table>
           </div>
         </div>
       </div>
-      <div className="form-group col-6">
-        <label>Nome do ingrediente</label>
-        <input type="text" className="form-control" placeholder="Ingrediente" />
-      </div>
-      <div className="form-group col-2">
-        <label>Quantidade Grupo</label>
-        <input type="text" className="form-control" placeholder="Qtd." />
-      </div>
-      <div className="form-group col-2">
-        <label htmlFor="exampleFormControlSelect1">Und. de Medida</label>
-        <select className="form-control" id="exampleFormControlSelect1">
-          <option>g</option>
-          <option>Kg</option>
-          <option>Und.</option>
-          <option>L</option>
-          <option>ml</option>
-        </select>
-      </div>
-      <div className="form-group col-2">
-        <label>Total</label>
-        <input type="text" className="form-control" placeholder="Total" />
-      </div>
+        
+        <div className="form-group col-5">
+          <label>Nome do ingrediente</label>
+          <input type="text" className="form-control" placeholder="Ingrediente" />
+        </div>
+        <div className="form-group col-2">
+          <label>Quantidade Grupo</label>
+          <input type="text" className="form-control" placeholder="Qtd." />
+        </div>
+        <div className="form-group col-2">
+          <label htmlFor="exampleFormControlSelect1">Und. de Medida</label>
+          <select className="form-control" id="exampleFormControlSelect1">
+            <option>g</option>
+            <option>Kg</option>
+            <option>Und.</option>
+            <option>L</option>
+            <option>ml</option>
+          </select>
+        </div>
+        <div className="form-group col-2">
+          <label>Total</label>
+          <input type="text" className="form-control" placeholder="Total" />
+        </div>
+        <div className="form-group col-1">
+          <button type="button" onClick={this.addProducts()} className="btn btn-primary btn-sm add">
+            +
+          </button>
+          <button type="button" className="btn btn-secondary btn-sm">
+            -
+          </button>
+        </div>
     </div>
   );}
 }

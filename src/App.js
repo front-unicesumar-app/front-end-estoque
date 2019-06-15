@@ -11,9 +11,9 @@ export default class App extends React.Component{
     return (
       <div className="App">
         <NavBar></NavBar>
-        <div class="main-wrap">
+        <div className="main-wrap">
           <SideBar></SideBar>
-          <div class="container" id="main-container">
+          <div className="container" id="main-container">
             <Main></Main>
           </div>
         </div>
