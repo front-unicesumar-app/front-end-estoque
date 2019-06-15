@@ -11,9 +11,11 @@ export default class App extends React.Component{
     return (
       <div className="App">
         <NavBar></NavBar>
-        <div className="row">
-            <SideBar></SideBar>
+        <div class="main-wrap">
+          <SideBar></SideBar>
+          <div class="container">
             <Main></Main>
+          </div>
         </div>
       </div>
     );
