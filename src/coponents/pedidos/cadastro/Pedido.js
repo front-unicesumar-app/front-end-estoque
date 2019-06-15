@@ -15,15 +15,16 @@ export default class Pedido extends React.Component {
 
     this.renderList = this.renderList.bind(this);
   }
-
-  products = [
-    {id: 0, name: 'Cebola', qtd: 5, un: 'kg', total: 10},
-    {id: 1,  name: 'Maçã', qtd: 2, un: 'Und.', total: 4},
-  ];
+  state = {
+    products: [
+      {id: 0, name: 'Cebola', qtd: 5, un: 'kg', total: 10},
+      {id: 1,  name: 'Maçã', qtd: 2, un: 'Und.', total: 4},
+    ]
+  }
 
   renderList() {
-    console.log(this.products);
-    return this.products.map(list => (
+    console.log(this.state.products);
+    return this.state.products.map(list => (
       <tr key={list.id}>
         <th>{list.name}</th>
         <th>{list.qtd}</th>
@@ -34,8 +35,7 @@ export default class Pedido extends React.Component {
   }
 
   addProducts() {
-    this.products.push({id: 2,  name: 'Suco', qtd: 2, un: 'litros', total: 4})
-    this.renderList();
+    this.setState( {products: this.state.products.concat({id: 2,  name: 'Suco', qtd: 2, un: 'litros', total: 4})})
   }
 
   render(){
@@ -51,27 +51,7 @@ export default class Pedido extends React.Component {
       <div className="form-group col-4">
         <label>Quantidade de Equipes</label>
         <input type="text" className="form-control" placeholder="Equipes" />
-      </div>
-      <div className="col-12">
-        <div className="row">
-          <div className="col-10">
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>Produto</th>
-                  <th>Quantidade</th>
-                  <th>Un</th>
-                  <th>Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                {this.renderList()}
-              </tbody>
-            </Table>
-          </div>
-        </div>
-      </div>
-        
+      </div>        
         <div className="form-group col-5">
           <label>Nome do ingrediente</label>
           <input type="text" className="form-control" placeholder="Ingrediente" />
@@ -95,13 +75,33 @@ export default class Pedido extends React.Component {
           <input type="text" className="form-control" placeholder="Total" />
         </div>
         <div className="form-group col-1">
-          <button type="button" onClick={this.addProducts()} className="btn btn-primary btn-sm add">
+          <button type="button" onClick={this.addProducts} className="btn btn-primary btn-sm add">
             +
           </button>
           <button type="button" className="btn btn-secondary btn-sm">
             -
           </button>
         </div>
+
+        <div className="col-12">
+        <div className="row">
+          <div className="col-10">
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>Produto</th>
+                  <th>Quantidade</th>
+                  <th>Un</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.renderList()}
+              </tbody>
+            </Table>
+          </div>
+        </div>
+      </div>
     </div>
   );}
 }

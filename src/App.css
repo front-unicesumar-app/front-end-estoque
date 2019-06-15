@@ -32,4 +32,5 @@ html,body,#root{
 
 #main-container {
     padding-top: 70px;
+    transform: translate(6em)
 }
