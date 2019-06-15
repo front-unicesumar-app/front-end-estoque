@@ -29,3 +29,7 @@ html,body,#root{
     display: flex;
     flex-direction: row;
 }
+
+#main-container {
+    padding-top: 70px;
+}
