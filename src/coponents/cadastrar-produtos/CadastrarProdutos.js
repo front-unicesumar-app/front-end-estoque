@@ -2,8 +2,10 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-export default function CadastrarProdutos() {
-  return (
-    <div>test Cadastrar Produtos</div>
-  );
+export default class CadastrarProdutos extends React.Component {
+  render() {
+    return (
+      <div>test Cadastrar Produtos</div>
+    );
+  }
 }
