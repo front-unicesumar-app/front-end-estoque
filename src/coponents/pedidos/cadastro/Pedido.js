@@ -6,7 +6,7 @@ import "./style.css";
 
 
 
-export default class Pedido {
+export default class Pedido extends React.Component {
 
   products = [
     {id: 0, name: 'A'},
@@ -22,9 +22,9 @@ export default class Pedido {
   }
   
  
-  listProducts = this.products.map((product) => (
-      <div className="prdList row" key={this.product.id}>{this.product.name}</div>
-  ));
+  // listProducts = this.products.map((product) => (
+      // <div className="prdList row" key={this.product.id}>{this.product.name}</div>
+  // ));
 
   render(){
   return (

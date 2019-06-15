@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import './style.css';
 import {Switch, Route} from 'react-router-dom'
 
-import Pedido from '../pedidos/cadastro/Pedido';
+import Pedido from './../pedidos/cadastro/Pedido';
 import ListaDePedidos from '../pedidos/lista-de-pedidos/ListaDePedidos';
 import CadastrarProdutos from '../produtos/cadastrar-produtos/CadastrarProdutos'
 
@@ -15,7 +15,7 @@ export default class Main extends Component {
         <div className="col-12">
           <Switch>
           <Route exact path='/' component={ListaDePedidos}/>
-          <Route path='/pedido' component={Pedido}/>
+          <Route path='/cadastrar-pedido' component={Pedido}/>
           <Route path='/cadastrar-produtos' component={CadastrarProdutos}/>
           </Switch>
         </div>
