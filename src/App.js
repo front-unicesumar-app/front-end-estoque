@@ -13,7 +13,7 @@ export default class App extends React.Component{
         <NavBar></NavBar>
         <div className="main-wrap">
           <SideBar></SideBar>
-          <div className="container" id="main-container">
+          <div id="main-container">
             <Main></Main>
           </div>
         </div>

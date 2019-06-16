@@ -11,12 +11,12 @@ import CadastrarProdutos from '../produtos/cadastrar-produtos/CadastrarProdutos'
 export default class Main extends Component {
   render() {
     return (
-      <div className="container main">
+      <div className="main">
         <div className="col-12">
           <Switch>
           <Route exact path='/' component={ListaDePedidos}/>
           <Route path='/cadastrar-pedido' component={Pedido}/>
-          <Route path='/cadastrar-produtos' component={CadastrarProdutos}/>
+          <Route path='/produtos' component={CadastrarProdutos}/>
           </Switch>
         </div>
       </div>

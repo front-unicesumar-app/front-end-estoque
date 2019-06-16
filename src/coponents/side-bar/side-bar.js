@@ -16,7 +16,7 @@ export default class SideBar extends Component {
           <NavLink to='/cadastrar-pedido'>Criar pedidos</NavLink>
           </ListGroup.Item>
           <ListGroup.Item>
-          <NavLink to='/cadastrar-produtos'>Cadastrar produtos</NavLink>
+          <NavLink to='/produtos'>Produtos</NavLink>
           </ListGroup.Item>
         </ListGroup>
       </div>
