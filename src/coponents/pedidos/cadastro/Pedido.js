@@ -14,13 +14,31 @@ export default class Pedido extends React.Component {
     this.addProducts = this.addProducts.bind(this);
 
     this.renderList = this.renderList.bind(this);
+
+    this.setUser = this.setUser.bind(this);
+    this.setGroupes = this.setGroupes.bind(this);
+    this.setProductName = this.setProductName.bind(this)
+    this.setQtd = this.setQtd.bind(this);
+    this.setTotal = this.setTotal.bind(this);
+    this.setUnd = this.setUnd.bind(this);
+    this.state.user.name = '';
+    this.state.user.groupes = '';
+    
   }
-  state = {
-    products: [
-      {id: 0, name: 'Cebola', qtd: 5, un: 'kg', total: 10},
-      {id: 1,  name: 'Maçã', qtd: 2, un: 'Und.', total: 4},
-    ]
-  }
+      state = {
+        user: {
+          name: '', 
+        groupes: ''
+      },
+        products: [],
+        product:{
+          id: null,
+          name: '',
+          qtd: null,
+          und:'',
+          total: null
+        }
+      }
 
   renderList() {
     console.log(this.state.products);
@@ -35,7 +53,47 @@ export default class Pedido extends React.Component {
   }
 
   addProducts() {
-    this.setState( {products: this.state.products.concat({id: 2,  name: 'Suco', qtd: 2, un: 'litros', total: 4})})
+    this.setState( {products: this.state.products.concat({
+      id: null,  
+      name: this.state.product.name, 
+      qtd: this.state.product.qtd, 
+      und: this.state.product.und, 
+      total: this.state.product.total})})
+  }
+
+  setUser(event){
+    this.setState({
+        user:{name: event.target.value}
+    })
+  }
+  setGroupes(event){
+    this.setState({
+      user: {groupes: event.target.value}
+    })
+  }
+
+  setProductName(event){
+    this.setState({
+      product:{name: event.target.value}
+    })
+  }
+
+  setQtd(event){
+    this.setState({
+      product:{qtd: event.target.value}
+    })
+  }
+
+  setUnd(event){
+    this.setState({
+      product:{und: event.target.value}
+    })
+  }
+
+  setTotal(event){
+    this.setState({
+      product:{total: event.target.value}
+    })
   }
 
   render(){
@@ -46,23 +104,23 @@ export default class Pedido extends React.Component {
       </div>
       <div className="form-group col-8">
         <label>Nome do Professor</label>
-        <input type="text" className="form-control" placeholder="Professor" />
+        <input type="text" className="form-control" placeholder="Professor" onChange={this.setUser}/>
       </div>
       <div className="form-group col-4">
         <label>Quantidade de Equipes</label>
-        <input type="text" className="form-control" placeholder="Equipes" />
+        <input type="text" className="form-control" placeholder="Equipes" onChange={this.setGroupes}/>
       </div>        
         <div className="form-group col-5">
           <label>Nome do ingrediente</label>
-          <input type="text" className="form-control" placeholder="Ingrediente" />
+          <input type="text" className="form-control" placeholder="Ingrediente" onChange={this.setProductName}/>
         </div>
         <div className="form-group col-2">
           <label>Quantidade Grupo</label>
-          <input type="text" className="form-control" placeholder="Qtd." />
+          <input type="text" className="form-control" placeholder="Qtd." onChange={this.setQtd}/>
         </div>
         <div className="form-group col-2">
           <label htmlFor="exampleFormControlSelect1">Und. de Medida</label>
-          <select className="form-control" id="exampleFormControlSelect1">
+          <select className="form-control" id="exampleFormControlSelect1" onChange={this.setUnd}>
             <option>g</option>
             <option>Kg</option>
             <option>Und.</option>
@@ -72,7 +130,7 @@ export default class Pedido extends React.Component {
         </div>
         <div className="form-group col-2">
           <label>Total</label>
-          <input type="text" className="form-control" placeholder="Total" />
+          <input type="text" className="form-control" value={this.state.product.total} placeholder="Total"/>
         </div>
         <div className="form-group col-1">
           <button type="button" onClick={this.addProducts} className="btn btn-primary btn-sm add">
