@@ -1,0 +1,27 @@
+div.list-group-item, .list-subheader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.list-subheader {
+    padding: 0.75rem 1.25rem;
+}
+
+div.list-group-item > div:not(:first-child) {
+    margin-left: 10px;
+}
+
+.item-name, .sub-name {
+    flex: 70% 1 0;
+}
+.item-date, .sub-date {
+    flex: 1;
+}
+.item-actions, .sub-actions {
+    flex: 1 0 1;
+}
+
+.item-actions > button:not(:first-child) {
+    margin-left: 5px;
+}
